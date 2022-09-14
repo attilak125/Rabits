@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:unless="${traininglist.isEmpty()}">
+<h1>These are the current trainings that were added</h1>
+<ul th:each="training : ${traininglist}" th:object="${training}">
+    <li th:utext="${training.getDetail()}">
+        <p th:text="${training.getType()}"></p>
+        <p th:utext="${training.getDetail()}"></p>
+    </li>
+</ul>
+</div>
+<h1 th:if="${traininglist.isEmpty()}">We need some training please add one.</h1>
+</body>
+</html>
