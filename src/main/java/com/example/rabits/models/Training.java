@@ -1,12 +1,12 @@
 package com.example.rabits.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-import java.util.Arrays;
-import java.util.List;
 
 @Entity
 @Data
@@ -14,14 +14,13 @@ import java.util.List;
 @AllArgsConstructor
 public class Training {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
-    private String type;
-    private String tasks;
-
-    public Training(String tasks, String type) {
-        this.tasks = tasks.replace(System.lineSeparator(),"<br>");
-    }
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private long id;
+  private String type;
+  private String tasks;
+  public Training(String type, String tasks) {
+    this.type = type;
+    this.tasks = tasks.replace(System.lineSeparator(), "<br>");
+  }
 }
