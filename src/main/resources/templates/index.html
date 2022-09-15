@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-
+<header th:insert="../static/header.html :: header"> </header>
 <div th:unless="${traininglist.isEmpty()}">
 <h1>These are the current trainings that were added</h1>
 <ul th:each="training : ${traininglist}" th:object="${training}">
